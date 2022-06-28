@@ -3,7 +3,7 @@ import BaseSketch from 'react-p5'
 
 const windowWidth = 500
 const windowHeight = 500
-const Sketch = ({ zorbs, zoraEvents = { length: 500 } }) => {
+const Sketch = () => {
 	const [t, setT] = useState(0)
 	const [zorbArray, setZorbArray] = useState([])
 

@@ -1,13 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import styles from "../../styles/Home.module.css";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import dynamic from "next/dynamic";
-import Sketch from "./components/sketch/sketch";
 
 const DynamicComponentWithNoSSR = dynamic(
-  // () => import("../components/Sketch"),
-  () => import("./components/sketch"),
+  () => import("../components/Sketch"),
   { ssr: false }
 );
 
@@ -38,13 +36,10 @@ export default function Home() {
           {"Today's mint:"}
         </p>
 
-        {/* <div className={styles.grid}> */}
         <div
           style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
         >
-          {/* <div style={{ background: "black", width: 500, height: 500 }} /> */}
           <DynamicComponentWithNoSSR />
-          {/* <Sketch /> */}
         </div>
       </main>
 
