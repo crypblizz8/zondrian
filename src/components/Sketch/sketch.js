@@ -74,12 +74,28 @@ const Sketch = () => {
             if (protection > 10000) {
                 break;
             }
-         }
+        }
+        
+        console.log('run')
     };
 
      
+    // const saveImage = (p5) => {
+    //     p5.save()
+    // }
 
-	return <BaseSketch setup={setup} draw={draw} />;
+    return (
+        <div className="flex flex-col items-center">
+            <BaseSketch setup={setup} draw={draw} />
+            {/* <button
+				// onClick={saveImage()}
+				onClick={() => console.log('xxx')}
+				className="bg-black hover:bg-gray text-white font-bold py-2 px-8 rounded my-10 mx-10">
+				Save Image
+			</button> */}
+        </div>
+    ) 
+    ;
 };
 
 export default Sketch

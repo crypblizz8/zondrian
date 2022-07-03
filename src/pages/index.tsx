@@ -10,6 +10,29 @@ const DynamicComponentWithNoSSR = dynamic(
 );
 
 export default function Home() {
+  const footer = (
+    <footer className={styles.footer}>
+      <a
+        href="https://twitter.com/crypblizz"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Twitter
+      </a>
+    </footer>
+  );
+
+  const collectionGrid = () => {
+    return (
+      <div className="grid grid-cols-3 gap-6">
+        <div className="h-96 w-96 border-solid border-2 border-sky-500 mx-4" />
+        <div className="h-96 w-96 border-solid border-2 border-sky-500 mx-4" />
+        <div className="h-96 w-96 border-solid border-2 border-sky-500 mx-4" />
+        <div className="h-96 w-96 border-solid border-2 border-sky-500 mx-4" />
+      </div>
+    );
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -18,13 +41,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "flex-end",
-          padding: 12,
-        }}
-      >
+      <div className="flex justify-center p-4">
         <ConnectButton />
       </div>
 
@@ -32,28 +49,16 @@ export default function Home() {
         <h1 className={styles.title}>Zondrian</h1>
 
         <p className="my-10 mx-0 text-xl text-center">
-          Inspired by Piet Mondrian + Generative Art + Zora. <br />{" "}
-          {"Today's mint:"}
+          Inspired by Piet Mondrian + Generative Art + Zora.
         </p>
 
-        <div
-          className="flex justify-center items-center"
-          // style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-        >
-          <DynamicComponentWithNoSSR />
+        <div className="flex justify-center items-center">
+          {/* <DynamicComponentWithNoSSR /> */}
+          {collectionGrid()}
         </div>
         <MintButton />
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://twitter.com/crypblizz"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Twitter
-        </a>
-      </footer>
+      {footer}
     </div>
   );
 }
