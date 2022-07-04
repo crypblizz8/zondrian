@@ -8,8 +8,6 @@ import MintButton from "../MintButton";
 
 const CollectionGrid = ({data}) => {
 	
-
-	console.log(' zoraCollectionData2 data', data.nodes);
 	
 	// const [pendingTx, setPendingTx] = useState(false)
 	// const { activeChain, chains } = useNetwork()
@@ -28,7 +26,6 @@ const CollectionGrid = ({data}) => {
 					<div className="h-96 w-96 m-10" key={i}>
 						<Image src={e?.token.image?.url} alt='blitma' width={400} height={400} />
 						<p>{e.token.name}</p>
-						{/* <MintButton/> */}
 					</div>
 				)
 			})}

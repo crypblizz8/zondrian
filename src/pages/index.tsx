@@ -14,8 +14,7 @@ const DynamicComponentWithNoSSR = dynamic(
   { ssr: false }
 );
 
-export default function Home({ zoraRes, collectionMultiCall }) {
-  // const testZora = wait;
+export default function Home({ zoraRes }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -48,17 +47,10 @@ export default function Home({ zoraRes, collectionMultiCall }) {
 }
 
 export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  // const zoraData = await testZoraCall(); // Has to be a getStaticProp Call.
-  const zoraCollectionData = await collectionTokenPreview(); // Has to be a getStaticProp Call.
+  const zoraCollectionData = await collectionTokenPreview();
   const zoraRes = await zoraCollectionData?.tokens;
-
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
   return {
     props: {
-      // zoraRes,
       zoraRes,
     },
   };
